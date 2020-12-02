@@ -1,26 +1,25 @@
-Symbol = "*"
+def valid_password(password):
+    S = "*"
+    p_count = 0
+    length = len(password)
+    if length <= 0:
+        return False
+
+    for char in password:
+        if char.isupper():
+            p_count +=1
+        if char.islower():
+            p_count +=1
+    if p_count <0:
+        return False
+    for i in range(p_count):
+        print(S, end='')
+    return True
 def main():
     password = input("Enter password: ")
     while not valid_password(password):
         print("Invalid Password")
         password = input("Enter a valid password: ")
-def valid_password(password):
-    if len(password) <= 0:
-        return False
-    password_count = 0
 
-    for char in password:
-        if char.islower():
-            password_count +=1
-        if char.isupper():
-            password_count +=1
-
-    for i in range(password_count):
-        print(Symbol, end='')
-
-    if password_count <0:
-        return False
-
-    return True
-
-main()
+if __name__ == '__main__':
+    main()
